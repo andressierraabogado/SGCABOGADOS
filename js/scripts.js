@@ -53,3 +53,78 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const postsPerPage = 4;
+    const posts = document.querySelectorAll('.card.mb-4');
+    const pageNumbersContainer = document.getElementById('page-numbers');
+    const prevButton = document.getElementById('prev-btn');
+    const nextButton = document.getElementById('next-btn');
+    let currentPage = 1;
+    const totalPages = Math.ceil(posts.length / postsPerPage);
+
+    function displayPosts(page) {
+        const start = (page - 1) * postsPerPage;
+        const end = start + postsPerPage;
+        posts.forEach((post, index) => {
+            post.style.display = (index >= start && index < end) ? 'block' : 'none';
+        });
+    }
+
+    function createPageNumbers() {
+        pageNumbersContainer.innerHTML = '';
+        for (let i = 1; i <= totalPages; i++) {
+            const pageNumber = document.createElement('span');
+            pageNumber.textContent = i;
+            pageNumber.classList.add('page-number');
+            if (i === currentPage) {
+                pageNumber.classList.add('active');
+            }
+            pageNumber.addEventListener('click', () => {
+                currentPage = i;
+                displayPosts(currentPage);
+                updatePageNumbers();
+                updateButtons();
+            });
+            pageNumbersContainer.appendChild(pageNumber);
+        }
+    }
+
+    function updatePageNumbers() {
+        document.querySelectorAll('.page-number').forEach((pageNumber, index) => {
+            pageNumber.classList.toggle('active', index + 1 === currentPage);
+        });
+    }
+
+    function updateButtons() {
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled = currentPage === totalPages;
+    }
+
+    prevButton.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            displayPosts(currentPage);
+            updatePageNumbers();
+            updateButtons();
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayPosts(currentPage);
+            updatePageNumbers();
+            updateButtons();
+        }
+    });
+
+    displayPosts(currentPage);
+    createPageNumbers();
+    updateButtons();
+});

@@ -1819,8 +1819,8 @@ progress {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #4682B4;
-  --bs-btn-border-color: #4682B4;
+  --bs-btn-bg: #1a425c;
+  --bs-btn-border-color: #1a425c;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #4D88B8;
   --bs-btn-hover-border-color: #4D88B8;
@@ -1830,8 +1830,8 @@ progress {
   --bs-btn-active-border-color: #4D88B8;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #4682B4;
-  --bs-btn-disabled-border-color: #4682B4;
+  --bs-btn-disabled-bg: #1a425c;
+  --bs-btn-disabled-border-color: #1a425c;
 }
 
 .btn-secondary {
@@ -2702,21 +2702,21 @@ progress {
 .navbar {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
-  --bs-navbar-color: rgba(0, 0, 0, 0.55);
-  --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
-  --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
-  --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
+  --bs-navbar-color: rgb(255, 255, 255);
+  --bs-navbar-hover-color: rgb(255, 255, 255);
+  --bs-navbar-disabled-color: rgb(255, 255, 255);
+  --bs-navbar-active-color: rgb(255, 255, 255);
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
-  --bs-navbar-brand-color: rgba(0, 0, 0, 0.9);
-  --bs-navbar-brand-hover-color: rgba(0, 0, 0, 0.9);
+  --bs-navbar-brand-color: rgb(255, 255, 255);
+  --bs-navbar-brand-hover-color: rgb(255, 255, 255);
   --bs-navbar-nav-link-padding-x: 0.5rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
   --bs-navbar-toggler-font-size: 1.25rem;
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  --bs-navbar-toggler-border-color: rgba(0, 0, 0, 0.1);
+  --bs-navbar-toggler-border-color: rgb(255, 255, 255);
   --bs-navbar-toggler-border-radius: 0.375rem;
   --bs-navbar-toggler-focus-width: 0.25rem;
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
@@ -5906,8 +5906,8 @@ progress {
 
 /* rtl:end:remove */
 .text-primary {
-  --bs-text-opacity: 1;
-  color: #4682B4 !important;
+  --bs-text-opacity: 0;
+  color: #1a425c !important;
 }
 
 .text-secondary {
@@ -8749,7 +8749,7 @@ p {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  background-color: #1a425c;
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -8797,7 +8797,7 @@ p {
   #mainNav.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #212529;
+    background-color: #1a425c;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
@@ -8971,7 +8971,7 @@ section#contactanos form#contactForm :-ms-input-placeholder {
 .contact-form button {
     display: block; /* Convertimos el botón en un elemento de bloque */
     margin: 0 auto; /* Aplicamos margen automático para centrar el botón */
-    background-color: #4682B4;
+    background-color: #1a425c;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -9062,5 +9062,39 @@ header.mastheadblog .mastheadblog-heading {
     margin-bottom: 4rem;
   }
 }
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.page-btn {
+  background-color: #4682B4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.page-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.page-number {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.page-number.active {
+  font-weight: bold;
+  color: #4682B4;
+}
+
 
 
