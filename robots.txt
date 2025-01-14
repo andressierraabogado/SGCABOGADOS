@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
-
-Sitemap: https://andressierraabogado.com/sitemap.xml
+Allow: /blog/
+Allow: /SGCABOGADOS/
+Sitemap: https://andressierraabogado.github.io/SGCABOGADOS/sitemap.xml
