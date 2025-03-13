@@ -9097,4 +9097,50 @@ header.mastheadblog .mastheadblog-heading {
 }
 
 
+/* Contenedor de los botones flotantes */
+.social-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+/* Estilos generales de los botones */
+.social-btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* WhatsApp */
+.whatsapp {
+  background-color: #25d366;
+}
+
+.whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(37, 211, 102, 0.5);
+}
+
+/* Instagram */
+.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.instagram:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(188, 24, 136, 0.5);
+}
+
 
