@@ -8813,50 +8813,7 @@ p {
     margin-right: 0;
   }
 }
-header.masthead {
-  padding-top: 10.5rem;
-  padding-bottom: 6rem;
-  text-align: center;
-  color: #fff;
-  background-image: url("../assets/gs.avif");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
-}
-header.masthead .masthead-subheading {
-  font-size: 1.5rem;
-  font-style: italic;
-  line-height: 1.5rem;
-  margin-bottom: 25px;
-  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-header.masthead .masthead-heading {
-  font-size: 3.25rem;
-  font-weight: 700;
-  line-height: 3.25rem;
-  margin-bottom: 2rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
 
-@media (min-width: 768px) {
-  header.masthead {
-    padding-top: 17rem;
-    padding-bottom: 12.5rem;
-  }
-  header.masthead .masthead-subheading {
-    font-size: 2.25rem;
-    font-style: italic;
-    line-height: 2.25rem;
-    margin-bottom: 2rem;
-  }
-  header.masthead .masthead-heading {
-    font-size: 4.5rem;
-    font-weight: 700;
-    line-height: 4.5rem;
-    margin-bottom: 4rem;
-  }
-}
 
 .team-member {
   margin-bottom: 3rem;
@@ -8876,12 +8833,36 @@ header.masthead .masthead-heading {
   height: 2.75rem;
 }
 
+
 section#contacto {
+  position: relative;           /* 🔴 ESTO ES CLAVE */
+  overflow: hidden;             /* 🔴 evita que se salga */
   background-color: #212529;
-  background-image: url("../assets/img/map-image.png");
+  background-image: url("../assets/img/01.webp");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
+  background-size: cover;
 }
+
+
+section#contacto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65); /* bastante oscuro */
+  z-index: 1;
+}
+
+section#contacto > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+
 section#contacto .section-heading {
   color: #fff;
 }
@@ -9018,50 +8999,11 @@ section#contacto form#contactForm :-ms-input-placeholder {
 }
 
 
-header.mastheadblog {
-  padding-top: 10.5rem;
-  padding-bottom: 6rem;
-  text-align: center;
-  color: #fff;
-  background-image: url("../assets/blog/header.png");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
-}
-header.mastheadblog .mastheadblog-subheading {
-  font-size: 1.5rem;
-  font-style: italic;
-  line-height: 1.5rem;
-  margin-bottom: 25px;
-  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-header.mastheadblog .mastheadblog-heading {
-  font-size: 3.25rem;
-  font-weight: 700;
-  line-height: 3.25rem;
-  margin-bottom: 2rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
 
-@media (min-width: 768px) {
-  header.mastheadblog {
-    padding-top: 17rem;
-    padding-bottom: 12.5rem;
-  }
-  header.mastheadblog .mastheadblog-subheading {
-    font-size: 2.25rem;
-    font-style: italic;
-    line-height: 2.25rem;
-    margin-bottom: 2rem;
-  }
-  header.mastheadblog .mastheadblog-heading {
-    font-size: 4.5rem;
-    font-weight: 700;
-    line-height: 4.5rem;
-    margin-bottom: 4rem;
-  }
-}
+
+
+
+
 
 
 .pagination {
@@ -9144,3 +9086,309 @@ header.mastheadblog .mastheadblog-heading {
 }
 
 
+
+
+
+
+
+
+
+
+
+header.masthead {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("../assets/header.webp");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
+h1, .intro-lead-in { /* O la clase específica de esos textos */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+header.masthead {
+    position: relative;
+    /* Tu imagen de fondo actual sigue aquí */
+}
+
+header.masthead::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45); /* Negro al 40% de opacidad */
+    z-index: 1; /* Asegura que quede sobre la foto */
+}
+
+header.masthead .container {
+    position: relative;
+    z-index: 2; /* Asegura que el texto quede sobre la capa oscura */
+}
+
+header.masthead .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(4rem);
+}
+
+@media (max-width: 768px) {
+
+  header.masthead .container {
+    transform: translateY(4,5rem); /* 👈 baja más el texto */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  header.masthead .masthead-heading {
+    font-size: 1.6rem; /* título más compacto */
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  header.masthead .masthead-subheading {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+
+  header.masthead .btn {
+    font-size: 0.85rem;      /* 👈 botón más pequeño */
+    padding: 0.6rem 1.2rem;  /* 👈 menos alto y ancho */
+  }
+}
+
+@media (max-width: 767px) {
+  header.masthead .container .masthead-heading {
+    font-size: 1.7rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  header.masthead {
+    background-position: 65% center !important;
+  }
+}
+
+
+header.masthead .masthead-subheading {
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.5rem;
+  margin-bottom: 25px;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header.masthead .masthead-heading {
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 3.25rem;
+  margin-bottom: 2rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 17rem;
+    padding-bottom: 12.5rem;
+  }
+  header.masthead .masthead-subheading {
+    font-size: 2.25rem;
+    font-style: italic;
+    line-height: 2.25rem;
+    margin-bottom: 2rem;
+  }
+  header.masthead .masthead-heading {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+
+
+
+/* ======================================================
+   HEADER PRINCIPAL
+====================================================== */
+
+header.masthead {
+  position: relative;
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("../assets/header.webp");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Capa oscura */
+header.masthead::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.50);
+  z-index: 1;
+}
+
+/* Contenido sobre la capa */
+header.masthead .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(4rem);
+}
+
+/* Sombra del texto */
+h1,
+.intro-lead-in {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ======================================================
+   TIPOGRAFÍAS BASE (DESKTOP)
+====================================================== */
+
+header.masthead .masthead-subheading {
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.5rem;
+  margin-bottom: 25px;
+  font-family: "Roboto Slab", system-ui, sans-serif;
+}
+
+header.masthead .masthead-heading {
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 3.25rem;
+  margin-bottom: 2rem;
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+/* ======================================================
+   VERSIÓN MÓVIL
+====================================================== */
+
+@media (max-width: 767px) {
+
+  header.masthead .container {
+    transform: translateY(4rem);
+    padding-inline: 1rem;
+  }
+
+  /* Bienvenido a SGC Abogados */
+  header.masthead .masthead-subheading {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+
+  /* Defensa Jurídica Estratégica */
+  header.masthead .masthead-heading {
+    font-size: 1.7rem;
+    line-height: 1.15;
+    margin-bottom: 0.9rem;
+    text-align: center;
+  }
+
+  /* Botón de acción */
+  header.masthead .btn {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.2rem;
+    margin-top: 0.35rem;
+  }
+
+  /* Ajuste imagen (mostrar más abogados) */
+  header.masthead {
+    background-position: 65% center;
+  }
+}
+
+/* ======================================================
+   VERSIÓN DESKTOP GRANDE
+====================================================== */
+
+@media (min-width: 768px) {
+
+  header.masthead {
+    padding-top: 17rem;
+    padding-bottom: 12.5rem;
+  }
+
+  header.masthead .masthead-subheading {
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    margin-bottom: 2rem;
+  }
+
+  header.masthead .masthead-heading {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+/* ======================================================
+   HEADER BLOG
+====================================================== */
+
+header.mastheadblog {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("../assets/blog/header.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+header.mastheadblog .mastheadblog-subheading {
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.5rem;
+  margin-bottom: 25px;
+  font-family: "Roboto Slab", system-ui, sans-serif;
+}
+
+header.mastheadblog .mastheadblog-heading {
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 3.25rem;
+  margin-bottom: 2rem;
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+@media (min-width: 768px) {
+
+  header.mastheadblog {
+    padding-top: 17rem;
+    padding-bottom: 12.5rem;
+  }
+
+  header.mastheadblog .mastheadblog-subheading {
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    margin-bottom: 2rem;
+  }
+
+  header.mastheadblog .mastheadblog-heading {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    margin-bottom: 4rem;
+  }
+}
