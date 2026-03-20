@@ -34,18 +34,39 @@
     
     <body id="page-top">
 
-        <!-- Botón flotante de redes sociales -->
-        <div class="social-container">
-            <a href="https://api.whatsapp.com/send?phone=+573112412363&text=Hola,%20deseo%20asesor%C3%ADa%20jur%C3%ADdica" 
-            target="_blank" 
-            class="social-btn whatsapp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.instagram.com/sgcabogadoscol" 
-            target="_blank" 
-            class="social-btn instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
+        <!-- Asistente Legal de IA Flotante -->
+        <div class="ai-chat-widget">
+            <!-- Tooltip Motivacional -->
+            <div id="ai-chat-tooltip" class="ai-chat-tooltip d-none">
+                ¿Necesitas asesoría? ¡Cuéntanos tu caso!
+                <button id="ai-tooltip-close" class="ms-2" aria-label="Cerrar sugerencia"><i class="fas fa-times"></i></button>
+                <div class="tooltip-arrow"></div>
+            </div>
+            
+            <button id="ai-chat-toggle" class="ai-chat-toggle" aria-label="Abrir Asistente Legal">
+                <i class="fas fa-comment-dots"></i>
+            </button>
+            <div id="ai-chat-window" class="ai-chat-window d-none">
+                <div class="ai-chat-header d-flex justify-content-between align-items-center p-3">
+                    <div>
+                        <i class="fas fa-robot me-2"></i><strong>Asistente Legal IA</strong>
+                    </div>
+                    <button class="btn-close btn-close-white" id="ai-chat-close" aria-label="Cerrar chat"></button>
+                </div>
+                <div id="ai-chat-messages" class="ai-chat-messages p-3">
+                    <div class="chat-message ai-message">
+                        Hola, bienvenido a SGC Abogados. Soy el asistente inteligente. Para poder ayudarte mejor, ¿puedes contarme brevemente de qué trata tu caso o consulta legal?
+                    </div>
+                </div>
+                <div class="ai-chat-input p-2 border-top">
+                    <form id="ai-chat-form" class="d-flex">
+                        <input type="text" id="ai-chat-input-text" class="form-control me-2" placeholder="Escribe tu consulta aquí..." required autocomplete="off">
+                        <button type="submit" class="btn btn-primary" id="ai-send-btn" style="background-color: #4682B4; border-color: #4682B4;">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
      
         <!-- Navigation-->
@@ -317,6 +338,7 @@
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <!-- Custom AI Chat JS-->
+        <script src="js/chat.js"></script>
     </body>
 </html>
